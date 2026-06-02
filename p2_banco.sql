@@ -23,3 +23,31 @@ END;
 $$;
  
 CALL sp_aprovados_pais_phds();
+
+--3
+
+CREATE OR REPLACE PROCEDURE aprovados_sozinhos (
+    OUT total_aprovados INT
+)
+LANGUAGE plpgsql
+AS $
+BEGIN
+    SELECT COUNT(*)
+    INTO total_aprovados
+    FROM studet_prediction
+    WHERE partner = 1
+      AND grade >= 1;
+END;
+$$
+ 
+ 
+DO $$
+DECLARE
+    qtd INTEGER;
+BEGIN
+    CALL aprovados_sozinho(qtd);
+ 
+    RAISE NOTICE 'Os Total de aprovados foram de: %', qtd;
+END;
+$$;
+
