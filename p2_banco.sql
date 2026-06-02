@@ -51,3 +51,17 @@ BEGIN
 END;
 $$;
 
+-- exercicio 4
+ 
+CREATE OR REPLACE PROCEDURE sp_salario_versus_estudos()
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_qtd_alunos INT;
+BEGIN
+    SELECT COUNT(*) FROM tb_estudante WHERE SALARY > 410 AND PREP_EXAM = 2 INTO v_qtd_alunos;
+    RAISE NOTICE '%', v_qtd_alunos;
+END;
+$$;
+ 
+CALL sp_salario_versus_estudos();
