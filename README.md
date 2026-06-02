@@ -2,8 +2,8 @@
 
 # Alunos
 
-Arthur Silva Miranda RA: 
+Arthur Silva Miranda RA: 2041382611039
 
 Marcelo Augusto Luvizutto RA: 2041382221027
 
-Carlos RA:
+CARLOS DANIEL DE SOUZA RIBEIRO RA: 2041382511037
